@@ -7,24 +7,23 @@
     for ($i = 0; $i < counts($mass); $i++){
         if ($mass[$i] < $min){         
             $min = $mass[$i];
-            $min_i = $i;
         }
         if($mass[$i] > $max){
            $max = $mass[$i];
-           $max_i = $i;
         }
     }
 
     for ($i = 0; $i < counts($mass); $i++){
-        if ($mass[$i] < $min_2 && $i !== $min_i){         
+        if ($mass[$i] < $min_2 && $mass[$i] !== $min){         
             $min_2 = $mass[$i];
         }
-        if($mass[$i] > $max_2 && $i !== $max_i){
+        if($mass[$i] > $max_2 && $mass[$i] !== $max){
            $max_2 = $mass[$i];
         }
     }
-    echo '<br>Max: '.$max.', '.$max_2;
-    echo '<br>Min: '.$min.', '.$min_2;
+
+    echo '<br>Max: '.$max.' '.$max_2;
+    echo '<br>Min: '.$min.' '.$min_2;
 
     function counts($mass){
         $i = 1;            
@@ -33,5 +32,8 @@
         }
         return $i;
     }
-?>
 
+
+
+
+?>
